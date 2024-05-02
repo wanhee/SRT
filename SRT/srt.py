@@ -162,6 +162,7 @@ class SRT:
         time: str | None = None,
         time_limit: str | None = None,
         available_only: bool = True,
+        passengers: 1
     ) -> list[SRTTrain]:
         """주어진 출발지에서 도착지로 향하는 SRT 열차를 검색합니다.
 
@@ -198,7 +199,7 @@ class SRT:
             "arriveTime": "N",
             "seatAttCd": "015",
             # 검색 시에는 1명 기준으로 검색
-            "psgNum": 1,
+            "psgNum": passengers,
             "trnGpCd": 109,
             # train type (05: 전체, 17: SRT)
             "stlbTrnClsfCd": "05",
